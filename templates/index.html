@@ -1,0 +1,30 @@
+{% csrf_token %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h1>index</h1>
+<form action="./update_venue_menu" method="post">
+    <label for="venue-name">naam: </label>
+    <input type="text" id="venue-name" placeholder="Name" class="input-field"
+           name="venue_name" required>
+    <button id="button">Send</button>
+</form>
+
+<form action="./get_recommended_beers" method="post">
+    <label for="untappd-username">naam: </label>
+    <input type="text" id="untappd-username" placeholder="Username" class="input-field"
+           name="untappd_username" required>
+    <label for="min-price">min price: </label>
+    <input type="number" id="min-price" placeholder="min price" class="input-field"
+           name="min_price" required>
+    <label for="max-price">min price: </label>
+    <input type="number" id="max-price" placeholder="max price" class="input-field"
+           name="max_price" required>
+    <button id="button">Send</button>
+</form>
+</body>
+</html>
