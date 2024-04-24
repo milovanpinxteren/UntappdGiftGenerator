@@ -1,4 +1,3 @@
-{% csrf_token %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -6,13 +5,13 @@
     <title>Title</title>
 </head>
 <body>
-<h1>index</h1>
-<form action="./update_venue_menu" method="post">
-    <label for="venue-name">naam: </label>
-    <input type="text" id="venue-name" placeholder="Name" class="input-field"
-           name="venue_name" required>
-    <button id="button">Send</button>
-</form>
+<h1>Bier cadeau generator</h1>
+{#<form action="./update_venue_menu" method="post">#}
+{#    <label for="venue-name">naam: </label>#}
+{#    <input type="text" id="venue-name" placeholder="Name" class="input-field"#}
+{#           name="venue_name" required>#}
+{#    <button id="button">Send</button>#}
+{#</form>#}
 
 <form action="./get_recommended_beers" method="post">
     <label for="untappd-username">naam: </label>
@@ -24,7 +23,12 @@
     <label for="max-price">min price: </label>
     <input type="number" id="max-price" placeholder="max price" class="input-field"
            name="max_price" required>
+    <label for="number-of-beers">number of beers: </label>
+    <input type="number" id="number-of-beers" placeholder="number of beers you want to give" class="input-field"
+           name="number_of_beers" required>
     <button id="button">Send</button>
+    {% csrf_token %}
+
 </form>
 </body>
 </html>

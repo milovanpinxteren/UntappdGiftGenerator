@@ -7,7 +7,6 @@ from giftGenerator.models import Venues
 
 
 def index(request):
-    print('hoi')
     return render(request, 'index.html')
 
 def update_venue_menu(request):
@@ -27,7 +26,8 @@ def get_recommended_beers(request):
         untappd_username = request.POST['untappd_username']
         min_price = request.POST['min_price']
         max_price = request.POST['max_price']
+        number_of_beers = request.POST['number_of_beers']
         beers = user_beer_getter.get_beers_from_username(untappd_username)
-        user_preference = user_preference_deducer.deduce_abv_ibu(beers)
+        user_preference = user_preference_deducer.get_preference(beers)
 
     return render(request, 'index.html')

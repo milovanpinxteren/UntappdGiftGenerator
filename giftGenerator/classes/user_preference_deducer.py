@@ -2,7 +2,11 @@ import numpy as np
 
 class UserPreferenceDeducer:
     def get_preference(self, beers):
-        abv_ibu_prefs = self.deduce_abv_ibu(beers)
+        abv_ibu_prefs = self.deduce_abv_ibu(beers) #abv is percentage alcohol, IBU is bitterness
+        #country, favorite brewery
+        #global rating
+        #difference personal and global rating
+        return abv_ibu_prefs
 
     def deduce_abv_ibu(self, beers_data):
         abv_values, ibu_values = self.extract_abv_and_ibu(beers_data)
@@ -33,7 +37,6 @@ class UserPreferenceDeducer:
         print(f"25th percentile: {ibu_quantiles[0]}")
         print(f"Median (50th percentile): {ibu_quantiles[1]}")
         print(f"75th percentile: {ibu_quantiles[2]}")
-
 
         # return {
         #     'min_abv': min_abv,
